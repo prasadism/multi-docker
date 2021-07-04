@@ -1,0 +1,16 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t prasad2099/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true prasad2099/react-test npm test
+
+after_success:
+  - docker build -t prasad2099/muilt-client ./client
+  - docker build -t prasad2099/muilt-client ./nginx
+  - docker build -t prasad2099/muilt-client ./server
+  - docker build -t prasad2099/muilt-client ./worker
