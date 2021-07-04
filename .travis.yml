@@ -10,16 +10,16 @@ script:
   - docker run -e CI=true prasad2099/react-test npm test
 
 after_success:
-  - docker build -t prasad2099/muilt-client ./client
-  - docker build -t prasad2099/muilt-client ./nginx
-  - docker build -t prasad2099/muilt-client ./server
-  - docker build -t prasad2099/muilt-client ./worker
+  - docker build -t prasad2099/multi-client ./client
+  - docker build -t prasad2099/multi-client ./nginx
+  - docker build -t prasad2099/multi-client ./server
+  - docker build -t prasad2099/multi-client ./worker
 
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 
-  - docker push prasad2099/muilt-client
-  - docker push prasad2099/muilt-nginx
-  - docker push prasad2099/muilt-server
-  - docker push prasad2099/muilt-worker
+  - docker push prasad2099/multi-client
+  - docker push prasad2099/multi-nginx
+  - docker push prasad2099/multi-server
+  - docker push prasad2099/multi-worker
