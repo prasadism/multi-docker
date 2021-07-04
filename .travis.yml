@@ -15,11 +15,10 @@ after_success:
   - docker build -t prasad2099/muilt-client ./server
   - docker build -t prasad2099/muilt-client ./worker
 
-# Log in to docker CLI
+
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-#Take thos images and push them to docker hub
-
+  
 - docker push prasad2099/muilt-client
 - docker push prasad2099/muilt-nginx
 - docker push prasad2099/muilt-server
