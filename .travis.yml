@@ -18,8 +18,8 @@ after_success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  
-- docker push prasad2099/muilt-client
-- docker push prasad2099/muilt-nginx
-- docker push prasad2099/muilt-server
-- docker push prasad2099/muilt-worker
+
+  - docker push prasad2099/muilt-client
+  - docker push prasad2099/muilt-nginx
+  - docker push prasad2099/muilt-server
+  - docker push prasad2099/muilt-worker
