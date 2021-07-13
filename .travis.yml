@@ -24,15 +24,15 @@ after_success:
   - docker push prasad2099/multi-server
   - docker push prasad2099/multi-worker
 
-  deploy:
-    provider: elasticbeanstalk
-    region: ap-south-1
-    app: multi-docker
-    env: MultiDocker-env
-    bucket_name: elasticbeanstalk-ap-south-1-478755237405
-    bucket_path: docker-multi
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-ap-south-1-478755237405
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
     
